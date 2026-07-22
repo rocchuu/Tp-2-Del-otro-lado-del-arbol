@@ -1,0 +1,727 @@
+/* ============================================
+   DETRÁS DEL ÁRBOL — estilos generales
+   ============================================ */
+
+:root {
+  /* Colores */
+  --color-principal: #BEDD8C;
+  --color-secundario: #ECB70A;
+  --color-fondo1: #FFFDF6;
+  --color-fondo2: #303851;
+  --color-hover: #e1711b;
+  --color-font: #191B12;
+
+  /* Tipografía */
+  --font-titulo: "Baloo Thambi 2", system-ui, sans-serif;
+  --font-par: "Inter", system-ui, sans-serif;
+  --font-aclaraciones: "Inter", system-ui, sans-serif;
+
+  --fontsize-titulo: 96px;
+  --fontsize-subtitulo: 64px;
+  --fontsize-seccion: 48px;
+  --fontsize-par: 20px;
+  --fontsize-aclaraciones: 16px;
+
+  /* Espaciado */
+  --margin-topbottom: 0px;
+  --margin-leftright: 150px;
+  --padding-seccion: 60px;
+  --padding-seccion2: 30px;
+
+  /* Auxiliares (no pedidas explícitamente, pero necesarias para forma/sombra) */
+  --radio-card: 40px 14px 40px 14px;
+  --radio-suave: 18px;
+  --sombra: 0 10px 25px rgba(13, 23, 80, 0.12);
+  --contenedor: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: var(--margin-topbottom) 0;
+  font-family: var(--font-par);
+  font-weight: 400;
+  background-color: var(--color-fondo1);
+  color: var(--color-font);
+  line-height: 1.6;
+  font-size: var(--fontsize-par);
+  -webkit-font-smoothing: antialiased;
+}
+
+.icono {
+  width: 80px;
+  height: 80px;
+}
+
+.cardimg {
+  width: 100%;
+  height: 110px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardimg img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 30px;
+}
+
+.imgiconos {
+  width: 20px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-titulo);
+  font-weight: 400;
+  color: var(--color-font);
+  margin: 0 0 0.5em;
+  line-height: 1.15;
+}
+
+p {
+  margin: 0 0 1em;
+  font-family: var(--font-par);
+  font-size: var(--fontsize-par);
+  color: var(--color-font);
+}
+
+small,
+.aclaracion {
+  font-family: var(--font-aclaraciones);
+  font-weight: 300;
+  font-size: var(--fontsize-aclaraciones);
+}
+
+a {
+  color: var(--color-font);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--color-hover);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-secundario);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Botones reutilizables */
+.btn {
+  display: inline-block;
+  font-family: var(--font-titulo);
+  font-weight: 400;
+  font-size: var(--fontsize-aclaraciones);
+  padding: 0.85em 1.8em;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn--primary {
+  background-color: var(--color-principal);
+  color: var(--color-font);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-hover);
+  color: var(--color-fondo1);
+  transform: translateY(-2px);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-font);
+  border-color: var(--color-principal);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-hover);
+  border-color: var(--color-hover);
+  color: var(--color-fondo1);
+}
+
+/* Contenedor genérico */
+.section {
+  max-width: var(--contenedor);
+  margin: var(--margin-topbottom) auto;
+  padding: var(--padding-seccion) clamp(1.25rem, 6vw, var(--margin-leftright));
+  text-align: center;
+}
+
+.section__eyebrow {
+  display: inline-block;
+  font-family: var(--font-aclaraciones);
+  font-weight: 300;
+  font-size: var(--fontsize-aclaraciones);
+  letter-spacing: 0.04em;
+  color: var(--color-font);
+  background-color: var(--color-principal);
+  padding: 0.3em 1em;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.section h2 {
+  font-size: clamp(1.8rem, 5vw, var(--fontsize-seccion));
+}
+
+.section__intro {
+  max-width: 55ch;
+  margin: 0 auto calc(var(--padding-seccion2) * 1.5);
+}
+
+.section--actividades {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: var(--color-fondo2);
+}
+
+.section--actividades h2,
+.section--actividades .section__intro {
+  color: var(--color-fondo1);
+}
+
+/* ============================================
+   HEADER / HERO
+   ============================================ */
+
+.hero {
+  background-color: var(--color-fondo1);
+  color: var(--color-font);
+  padding: calc(var(--padding-seccion) * 1.2) clamp(1.25rem, 6vw, var(--margin-leftright));
+}
+
+.hero__content {
+  max-width: var(--contenedor);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--padding-seccion2) * 1.5);
+}
+
+.hero__text {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero__logo {
+  font-size: 2.5rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  color: var(--color-font);
+  font-size: clamp(2.1rem, 7vw, var(--fontsize-titulo));
+  max-width: 16ch;
+  margin-inline: 0;
+}
+
+.hero p {
+  font-family: var(--font-par);
+  color: var(--color-font);
+  max-width: 45ch;
+  margin-inline: 0;
+  margin-bottom: 1.75rem;
+}
+
+/* Espacio reservado para la imagen grande del header.
+   Al incorporar la imagen real, reemplazar por <img> y
+   quitar el fondo/borde punteado de placeholder. */
+.hero__image {
+  flex: 1;
+  width: calc(100% + 2 * clamp(1.25rem, 6vw, var(--margin-leftright)));
+  margin-left: calc(-1 * clamp(1.25rem, 6vw, var(--margin-leftright)));
+  margin-right: calc(-1 * clamp(1.25rem, 6vw, var(--margin-leftright)));
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-aclaraciones);
+  font-weight: 300;
+  color: var(--color-font);
+  overflow: hidden;
+}
+
+.hero__image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: var(--radio-suave);
+}
+
+@media (min-width: 900px) {
+  .hero__image img {
+    max-height: 630px;
+  }
+
+  .hero__image {
+    flex: 1.6;
+  }
+}
+
+/* ============================================
+   NAV
+   ============================================ */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-fondo1);
+  padding: var(--padding-seccion2) clamp(1.25rem, 6vw, var(--margin-leftright));
+  box-shadow: 0 2px 10px rgba(13, 23, 80, 0.1);
+}
+
+.nav__brand {
+  font-family: var(--font-titulo);
+  font-weight: 400;
+  color: var(--color-fondo2);
+  font-size: 1.2rem;
+}
+
+.nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.nav__links a {
+  display: inline-block;
+  font-family: var(--font-par);
+  font-weight: 700;
+  font-size: var(--fontsize-aclaraciones);
+  color: var(--color-font);
+  padding: 0.5em 1em;
+  border-radius: 999px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav__links a:hover {
+  background-color: var(--color-principal);
+  color: var(--color-font);
+}
+
+.nav__cta {
+  background-color: var(--color-secundario);
+  color: var(--color-font) !important;
+}
+
+.nav__cta:hover {
+  background-color: var(--color-hover);
+  color: var(--color-fondo1) !important;
+}
+
+/* Nav más compacto en mobile: menos padding vertical, logo más chico
+   y links con menos aire, para que ocupe menos alto de pantalla. */
+@media (max-width: 599px) {
+  .nav {
+    padding: 0.6rem clamp(1.25rem, 6vw, var(--margin-leftright));
+    gap: 0.4rem;
+  }
+
+  .icono {
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav__links {
+    gap: 0.15rem;
+  }
+
+  .nav__links a {
+    padding: 0.35em 0.7em;
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================
+   CARDS — actividades y suscripción
+   ============================================ */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--padding-seccion2);
+}
+
+.card {
+  background-color: var(--color-fondo1);
+  border: 2px solid var(--color-principal);
+  border-radius: var(--radio-card);
+  padding: var(--padding-seccion2) 1.5rem;
+  box-shadow: var(--sombra);
+  text-align: left;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Espacio reservado para la foto de cada card (actividad o plan).
+   Al incorporar la imagen real, reemplazar por <img> dentro del
+   mismo contenedor .card__image y quitar el fondo/texto de placeholder. */
+.card__image {
+  aspect-ratio: 4 / 3;
+  margin: calc(var(--padding-seccion2) * -1) calc(-1.5rem) var(--padding-seccion2);
+  border-bottom: 2px dashed var(--color-principal);
+  background-color: rgba(190, 221, 140, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-aclaraciones);
+  font-weight: 300;
+  color: var(--color-font);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-hover);
+  box-shadow: 0 16px 30px rgba(13, 23, 80, 0.16);
+}
+
+.cardicon{
+  width: 80px;
+}
+
+.cardicon1{
+  width: 70px;
+}
+
+.card__icon {
+  font-size: 2.2rem;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+/* Cards de planes de suscripción */
+.card--plan {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__tag {
+  font-family: var(--font-titulo);
+  font-size: var(--fontsize-aclaraciones);
+  font-weight: 400;
+  color: var(--color-font);
+  background-color: var(--color-principal);
+  padding: 0.3em 1em;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.card--plan h3 {
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+}
+
+.card--plan .btn {
+  margin-top: auto;
+}
+
+/* ============================================
+   CTA — ¿Te interesa?
+   ============================================ */
+
+.section--cta {
+  max-width: none;
+  padding: var(--padding-seccion) clamp(1.25rem, 6vw, var(--margin-leftright));
+}
+
+.cta {
+  max-width: var(--contenedor);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--padding-seccion2);
+  text-align: center;
+}
+
+.cta__text h2,
+.cta__text p {
+  color: var(--color-font);
+}
+
+.cta__text p {
+  max-width: 45ch;
+  margin-inline: auto;
+}
+
+.cta__form {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background-color: var(--color-fondo1);
+  padding: var(--padding-seccion2);
+  border-radius: var(--radio-suave);
+  box-shadow: var(--sombra);
+  border: 2px solid var(--color-principal);
+}
+
+.cta__form label {
+  font-family: var(--font-par);
+  font-weight: 700;
+  font-size: var(--fontsize-aclaraciones);
+  color: var(--color-font);
+  margin-top: 0.5rem;
+}
+
+.cta__form input,
+.cta__form textarea {
+  font-family: var(--font-par);
+  font-size: var(--fontsize-par);
+  padding: 0.75em 1em;
+  border: 2px solid var(--color-principal);
+  border-radius: var(--radio-suave);
+  background-color: var(--color-fondo1);
+  color: var(--color-font);
+  resize: vertical;
+}
+
+.cta__form input:focus,
+.cta__form textarea:focus {
+  border-color: var(--color-hover);
+  outline: none;
+}
+
+.cta__form .btn {
+  margin-top: 1rem;
+  align-self: center;
+}
+
+/* ============================================
+   CONTACTO
+   ============================================ */
+
+.contacto__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-bottom: 8.5rem;
+}
+
+.contacto__lista li {
+  font-family: var(--font-par);
+  font-weight: 700;
+  color: var(--color-fondo2);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  background-color: var(--color-fondo2);
+  color: var(--color-fondo1);
+  text-align: center;
+  padding: var(--padding-seccion) clamp(1.25rem, 6vw, var(--margin-leftright));
+}
+
+.footer p {
+  font-family: var(--font-par);
+  color: var(--color-fondo1);
+  margin: 0.25em 0;
+}
+
+.footer p:first-child {
+  color: var(--color-fondo1);
+  font-family: var(--font-titulo);
+  font-size: 1.3rem;
+}
+
+.footer a {
+  color: var(--color-fondo1);
+}
+
+.footer a:hover {
+  color: var(--color-hover);
+}
+
+.footer_color {
+  color: var(--color-fondo1);
+}
+
+.footer_color:hover {
+  color: var(--color-hover);
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+/* Lista de íconos/imágenes clickeables del footer (redes, contacto, etc.),
+   dispuestos en fila de izquierda a derecha igual que .footer__links. */
+.footer__social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.footer__social a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* Ícono "pintado" con la variable de color: el PNG actúa como
+   máscara (sombra/silueta) y el color real lo pone background-color,
+   así puede cambiar entre color-fondo1 y color-hover con CSS. */
+.footer__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-fondo1);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  transition: background-color 0.15s ease;
+}
+
+.footer__social a:hover .footer__icon {
+  background-color: var(--color-hover);
+}
+
+.footer__legal {
+  font-family: var(--font-aclaraciones);
+  font-weight: 300;
+  margin-top: 1rem;
+  font-size: var(--fontsize-aclaraciones);
+  color: var(--color-fondo1);
+}
+
+/* ============================================
+   TABLET — desde 600px
+   ============================================ */
+
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contacto__lista {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+/* ============================================
+   DESKTOP — desde 900px
+   ============================================ */
+
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero__content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero__text {
+    flex: 1;
+  }
+}
+
+/* ============================================
+   DESKTOP GRANDE — desde 1150px
+   Acomoda las 5 cards de planes en una grilla
+   más pareja (3 + 2) en vez de dejar huecos.
+   ============================================ */
+
+@media (min-width: 1150px) {
+  .cards--plans {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

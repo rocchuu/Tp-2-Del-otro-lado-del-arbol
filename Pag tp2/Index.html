@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detrás del árbol</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <!-- ============================================
+         NAV: barra de navegación fija arriba de todo.
+         Contiene el logo/nombre de la organización y
+         los links a cada sección de la página.
+         ============================================ -->
+    <nav class="nav">
+        <div class="nav__brand">
+            <a href=""><span aria-hidden="true"></span> <img src="Img/icono.png" class="icono" alt="icono"></a>
+            
+        </div>
+        <ul class="nav__links">
+            <li>
+                <a href="">Catálogo</a>
+            </li>
+            <li>
+                <a href="#actividades">Actividades</a>
+            </li>
+            <li>
+                <a href="">Voluntariado</a>
+            </li>
+            <li>
+                <a href="">¿Quiénes somos?</a>
+            </li>
+            <li>
+                <!-- Link destacado con estilo propio (nav__cta) para resaltarlo del resto -->
+                <a class="nav__cta" href="#suscripcion">¡Suscribite!</a>
+            </li>
+        </ul>
+    </nav>
+
+   <main>
+
+    <!-- ============================================
+         HEADER / HERO: primera pantalla que ve el usuario.
+         Texto (título + bajada + botón) alineado a la
+         izquierda, y a la derecha la imagen grande
+         representativa del proyecto. La clase hero__image
+         hace que la imagen se adapte al espacio disponible
+         sin pasarse del margen ni del bloque de texto.
+         ============================================ -->
+        <header class="hero">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <span class="hero__logo" aria-hidden="true"></span>
+                    <h1>Acompañando a las infancias</h1>
+                    <p>
+                        Bienvenidos a nuestro espacio dedicado a acompañar y promover el desarrollo de las infancias.
+                    </p>
+                    <a class="btn btn--primary" href="#actividades">Descubrí las actividades</a>
+                </div>
+                <div class="hero__image">
+                    <img src="Img/img 1.png" alt="">
+                </div>
+            </div>
+        </header>
+
+    <!-- ============================================
+         SECCIÓN ACTIVIDADES: muestra en cards la oferta
+         de actividades para las infancias. Cada card tiene
+         un espacio de imagen, un ícono, título y descripción.
+         ============================================ -->
+        <section class="section section--actividades" id="actividades">
+            <span class="section__eyebrow"> Para explorar</span>
+            <h2>
+                Mirá todo lo que podés hacer
+            </h2>
+            <p class="section__intro">
+                Actividades pensadas para que cada infancia juegue, explore y crezca a su propio ritmo.
+            </p>
+
+            <div class="cards">
+                <!-- Cada .card representa una actividad individual -->
+                <article class="card">
+                    <!-- Espacio reservado para la foto de la actividad -->
+                    <div>
+                        <span><img src="Img/Actividad 1.png" alt=""></span>
+                    </div>
+                    <span class="card__icon" aria-hidden="true"></span>
+                    <h3>Historias que cobran vida</h3>
+                    <p>Disfrutá de teatro, magia y propuestas culturales que despiertan la imaginación de los más pequeños.</p>
+                </article>
+                <article class="card">
+                    <div>
+                        <span><img src="Img/Actividad 2.png" alt=""></span>
+                    </div>
+                    <span class="card__icon" aria-hidden="true"></span>
+                    <h3>Visitas de escuelas</h3>
+                    <p>¡Inscribite en el sorteo para venir de visita a la biblio con tu colegio! </p>
+                </article>
+                <article class="card">
+                    <div>
+                        <span><img src="Img/Actividad 3.png" alt=""></span>
+                    </div>
+                    <span class="card__icon" aria-hidden="true"></span>
+                    <h3>Juegos al aire libre</h3>
+                    <p>Espacios seguros y guiados para jugar en grupo y hacer nuevos amigos.</p>
+                </article>
+            </div>
+        </section>
+
+    <!-- ============================================
+         SECCIÓN SUSCRIPCIÓN: muestra las 5 formas de
+         colaborar como cards, todas con el mismo estilo
+         visual. La caja .cardimg tiene una altura fija
+         para que el título, el texto y el botón queden
+         siempre al mismo nivel entre card y card, sin
+         importar el tamaño real de cada imagen.
+         ============================================ -->
+        <section class="section section--suscripcion" id="suscripcion">
+            <span class="section__eyebrow"> Sumate</span>
+             <h2>
+                Sistema de suscripción
+             </h2>
+
+             <p class="section__intro">
+                Elegí la forma en la que querés acompañarnos. Cada aporte ayuda a que más chicos y chicas tengan un lugar seguro para crecer.
+             </p>
+
+            <div class="cards cards--plans">
+                <!-- Cada .card.card--plan representa un plan de colaboración -->
+                <article class="card card--plan">
+                    <div class="cardicon1">
+                        <span><img src="Img/cerdo.png" alt="chanchito"></span>
+                    </div>
+                   
+                    <h3>Los tres chanchitos</h3>
+                    <b>$3000</b>
+                    <a class="btn btn--outline" href="">Quiero sumarme</a>
+                </article>
+                <article class="card card--plan">
+                    <div class="cardicon">
+                        <span><img src="Img/globo-aerostatico.png" alt="globo aerostático"></span>
+                    </div>
+                    
+                    <h3>Cinco semanas en globo</h3>
+                    <b>$5000</b>
+                    <a class="btn btn--outline" href="">Quiero sumarme</a>
+                </article>
+                <article class="card card--plan">
+                    <div class="cardicon1">
+                        <span><img src="Img/manzana.png" alt="manzana"></span>
+                    </div>
+                   
+                    <h3>Blancanieves y los siete enanitos</h3>
+                    <b>$7000</b>
+                    <a class="btn btn--outline" href="">Quiero sumarme</a>
+                </article>
+                <article class="card card--plan">
+                    <div class="cardicon">
+                        <span><img src="Img/10.png" alt="10"></span>
+                    </div>
+                    
+                    <h3>El Diego y Messi</h3>
+                    <b>$10.000</b>
+                    <a class="btn btn--outline" href="">Quiero sumarme</a>
+                </article>
+                <article class="card card--plan">
+                    <div class="cardicon">
+                        <span><img src="Img/submarino.png" alt="submarino"></span>
+                    </div>
+                    
+                    <h3>Veinte mil leguas de viaje submarino</h3>
+                    <b>$20.000</b>
+                    <a class="btn btn--outline" href="">Quiero sumarme</a>
+                </article>
+            </div>
+        </section>
+
+    <!-- ============================================
+         SECCIÓN CTA: invita al usuario a dejar sus datos
+         para que la organización lo contacte.
+         ============================================ -->
+        <section class="section section--cta">
+            <div class="cta">
+                <div class="cta__text">
+                    <h2>
+                        ¿Te interesa?
+                    </h2>
+                    <p>
+                        Dejanos tus datos y nos ponemos en contacto para contarte cómo podés participar.
+                    </p>
+                </div>
+                <!-- Formulario de contacto: nombre, email y mensaje -->
+                <form class="cta__form">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamás?">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com">
+
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="3" placeholder="Contanos en qué te gustaría participar"></textarea>
+
+                    <button type="submit" class="btn btn--primary">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+    <!-- ============================================
+         SECCIÓN CONTACTO: datos de contacto directo
+         (ubicación, mail, teléfono, redes).
+         ============================================ -->
+        <section class="section section--contacto">
+            <h2>
+                También podés encontrarnos en:
+            </h2>
+            <ul class="contacto__lista">
+                <li> <span aria-hidden="true" class="imgiconos">  <img src="Img/facebook.png" alt=""></span> <a href="https://www.facebook.com/bibliodelotrolado">Biblioteca Del otro lado del árbol</a></li>
+
+                 <li> <span aria-hidden="true" class="imgiconos">  <img src="Img/youtube.png" alt=""></span> <a href="https://www.youtube.com/@DelOtroLadoDelArbol">DelOtroLadoDelArbol</a></li>
+
+                 <li> <span aria-hidden="true" class="imgiconos">  <img src="Img/gorjeo.png" alt=""></span> <a href="https://twitter.com/bibliodelotrolado">@bibliodelotro</a></li>
+
+                <li> <span aria-hidden="true" class="imgiconos"> <img src="Img/instagram.png" alt=""></span> <a href="https://www.instagram.com/bibliodelotrolado/">@bibliodelotrolado</a></li>
+
+                 <li> <span aria-hidden="true" class="imgiconos"> <img src="Img/carta.png" alt=""></span> <a href="">delotroladodelarbol@hotmail.com</a></li>
+                
+            </ul>
+        </section>
+   </main>
+
+    <!-- ============================================
+         FOOTER: cierre de la página con nombre, bajada
+         breve, links de navegación, íconos de redes
+         sociales clickeables y datos legales.
+         ============================================ -->
+   <footer class="footer">
+    
+        <p>Al otro lado del árbol</p>
+        <p>Un espacio seguro para que las infancias jueguen, exploren y crezcan.</p>
+
+        <ul class="footer__links">
+            <li >
+                <a class="footer_color" href="catalogo.html">Catálogo</a>
+            </li>
+            <li>
+                <a class="footer_color"href="#actividades">Actividades</a>
+            </li>
+            <li>
+                <a class="footer_color"href="voluntariado.html">Voluntariado</a>
+            </li>
+            <li>
+                <a class="footer_color"href="quienes-somos.html">¿Quiénes somos?</a>
+            </li>
+        </ul>
+
+        <!-- Íconos/imágenes clickeables (redes sociales, contacto), en fila
+             de izquierda a derecha igual que la lista de links de arriba -->
+        <ul class="footer__social">
+            <li>
+                <a href="https://www.facebook.com/bibliodelotrolado" aria-label="Facebook">
+                    <span class="footer__icon" style="-webkit-mask-image:url('Img/facebook.png'); mask-image:url('Img/facebook.png');"></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/@DelOtroLadoDelArbol" aria-label="YouTube">
+                    <span class="footer__icon" style="-webkit-mask-image:url('Img/youtube.png'); mask-image:url('Img/youtube.png');"></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/bibliodelotrolado" aria-label="Twitter">
+                    <span class="footer__icon" style="-webkit-mask-image:url('Img/gorjeo.png'); mask-image:url('Img/gorjeo.png');"></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/bibliodelotrolado/" aria-label="Instagram">
+                    <span class="footer__icon" style="-webkit-mask-image:url('Img/instagram.png'); mask-image:url('Img/instagram.png');"></span>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:delotroladodelarbol@hotmail.com" aria-label="Email">
+                    <span class="footer__icon" style="-webkit-mask-image:url('Img/carta.png'); mask-image:url('Img/carta.png');"></span>
+                </a>
+            </li>
+        </ul>
+
+        <p class="footer__legal">© 2026 Al otro lado del arbol. Todos los derechos reservados.</p>
+   </footer>
+</body>
+</html>
